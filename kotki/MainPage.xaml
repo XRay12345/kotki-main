@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="kotki.MainPage">
+    <ContentPage.Background>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#1E3A8A" Offset="0"/>
+            <GradientStop Color="#3B82F6" Offset="1"/>
+        </LinearGradientBrush>
+    </ContentPage.Background>
+    <VerticalStackLayout
+        Padding="0"
+        Spacing="25"
+        VerticalOptions="FillAndExpand"
+        HorizontalOptions="FillAndExpand" 
+        >
+
+        <!-- Grid z trzema kolumnami: lewy obraz, środkowy tekst, prawy obraz -->
+        <Grid ColumnDefinitions="*,Auto,*" VerticalOptions="Start" HorizontalOptions="FillAndExpand" HeightRequest="400">
+            <!-- Zwiększamy wysokość Gridu -->
+            <!-- Lewy obraz -->
+            <Image
+                Source="catri.png"
+                Aspect="AspectFit" 
+                HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+
+                <!-- Tekst wyśrodkowany w środku -->
+                <VerticalStackLayout Grid.Column="1" VerticalOptions="Center" HorizontalOptions="Center">
+                    <Label
+                    Text="ZOBA TEGO KOTA"
+                    Style="{StaticResource Headline}"
+                    SemanticProperties.HeadingLevel="Level1" 
+                    TextColor="White" 
+                    HorizontalOptions="Center" />
+
+                    <Label
+                    TextColor="White"
+                    HorizontalOptions="Center" />
+                </VerticalStackLayout>
+
+                <!-- Prawy obraz -->
+                <Image
+                Grid.Column="2"
+                Source="catt.png"
+                Aspect="AspectFit" 
+                    HorizontalOptions="FillAndExpand"
+                VerticalOptions="FillAndExpand" />
+        </Grid>
+
+        <!-- Reszta treści strony -->
+        <Grid VerticalOptions="Center" HorizontalOptions="Center">
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Spacing="30">
+                <Button
+                    x:Name="Dkot"
+                    Text="Dzisiejszy Kot" 
+                    BackgroundColor="Green"
+                    Clicked="Dkot_Clicked"
+                    CornerRadius="10" />
+
+                <Button        
+                    x:Name="kalendarz"
+                    Text="Zobacz inne koty" 
+                    BackgroundColor="Green"
+                    Clicked="kalendarz_Clicked"
+                    CornerRadius="10" />
+            </StackLayout>
+        </Grid>
+
+    </VerticalStackLayout>
+
+</ContentPage>
